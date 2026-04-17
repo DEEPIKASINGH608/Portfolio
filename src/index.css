@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+
+
+@theme {
+  /* The "Command Center" Grays */
+  --color-dark-100: #0D0D12;   /* Deep Midnight */
+  --color-dark-200: #16161D;   /* Surface Black */
+  --color-dark-400: #252530;   /* Divider Grey */
+
+  /* The "Ambition" Accents */
+  --color-electric-purple: #9D50FF; /* Enthusiasm & Creativity */
+  --color-cyber-cyan: #00F0FF;     /* Hard Work & Speed */
+  --color-bright-white: #FFFFFF;
+}
+
+/* Force the body to be dark so you can see your text */
+body {
+  background-color: #0D0D12;
+  color: #FFFFFF;
+  margin: 0;
+  font-family: 'Saira', sans-serif;
+}
+
+
+.typewriter {
+  overflow: hidden;
+  /* Using the Neon Green for the cursor to show energy */
+  border-right: 0.15em solid var(--color-neon-green);
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end infinite; /* Set to infinite for constant motion */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 15ch; } /* Match your character count here */
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-neon-green); }
+}
+
+
+
+
+/* Custom Light Mode Overrides */
+.light {
+  background-color: #F5F5F7;
+  color: #1A1A1A;
+}
+
+.light nav {
+  background-color: #0f172a;
+  border-color: #E5E7EB;
+}
+
+.light .text-bright-white {
+  color: #1A1A1A;
+}
+
+.light .bg-dark-300 {
+  background-color: #FFFFFF;
+}
+
+
+
+/* Ensure the light class doesn't override the dark background if you want it to stay dark */
+.light body {
+  background-color: #0f172a !important;
+}
+
+
+
+
+
