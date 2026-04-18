@@ -6,17 +6,22 @@
 
 @theme {
   /* The "Command Center" Grays */
-  --color-dark-100: #0D0D12;   /* Deep Midnight */
-  --color-dark-200: #16161D;   /* Surface Black */
-  --color-dark-400: #252530;   /* Divider Grey */
+  --color-dark-100: #0D0D12;
+  /* Deep Midnight */
+  --color-dark-200: #16161D;
+  /* Surface Black */
+  --color-dark-400: #252530;
+  /* Divider Grey */
 
   /* The "Ambition" Accents */
-  --color-electric-purple: #9D50FF; /* Enthusiasm & Creativity */
-  --color-cyber-cyan: #00F0FF;     /* Hard Work & Speed */
+  --color-electric-purple: #9D50FF;
+  /* Enthusiasm & Creativity */
+  --color-cyber-cyan: #00F0FF;
+  /* Hard Work & Speed */
   --color-bright-white: #FFFFFF;
 }
 
-/* Force the body to be dark so you can see your text */
+
 body {
   background-color: #0D0D12;
   color: #FFFFFF;
@@ -27,30 +32,48 @@ body {
 
 .typewriter {
   overflow: hidden;
-  /* Using the Neon Green for the cursor to show energy */
   border-right: 0.15em solid var(--color-neon-green);
   white-space: nowrap;
   width: 0;
-  animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end infinite; /* Set to infinite for constant motion */
+  animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 15ch; } /* Match your character count here */
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 15ch;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--color-neon-green); }
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--color-neon-green);
+  }
+}
+
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
 }
 
 
 
+.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
 
-/* Custom Light Mode Overrides */
-.light {
-  background-color: #F5F5F7;
-  color: #1A1A1A;
+
+.light .min-h-screen {
+  background-color: #f8fafc !important;
 }
 
 .light nav {
@@ -68,12 +91,6 @@ body {
 
 
 
-/* Ensure the light class doesn't override the dark background if you want it to stay dark */
 .light body {
   background-color: #0f172a !important;
 }
-
-
-
-
-

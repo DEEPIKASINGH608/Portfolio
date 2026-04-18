@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../assets/logo.jpeg';
+import logo from '/logo.jpeg';
 import { FaXmark, FaBars, FaMoon, FaSun } from "react-icons/fa6";
 
 const Navbar = () => {
@@ -19,8 +19,10 @@ const Navbar = () => {
   }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+
+    if (newMode) {
       document.documentElement.classList.remove('light');
       localStorage.setItem('theme', 'dark');
     } else {
@@ -38,7 +40,7 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
-// ... (keep imports and state logic exactly as they are)
+  const resumeLink = "https://drive.google.com/file/d/1XDUP_AnZ3vUoCCpMYzWZCkBgEvvWczK3/view?usp=drivesdk";
 
   return (
     <nav className="sticky top-0 z-[100] w-full px-6 py-4 backdrop-blur-xl border-b transition-colors duration-500 bg-[#0f172a]/90 border-slate-800">
@@ -79,10 +81,16 @@ const Navbar = () => {
             {isDarkMode ? <FaSun /> : <FaMoon />}
           </button>
 
-          <button className="hidden sm:block relative overflow-hidden px-7 py-2.5 rounded-sm bg-transparent border border-cyber-cyan text-cyber-cyan font-black text-xs tracking-widest hover:text-dark-100 transition-all duration-300 group">
-            <span className="relative z-10">HIRE ME</span>
+
+          <a
+            href={resumeLink}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden sm:block relative overflow-hidden px-7 py-2.5 rounded-sm bg-transparent border border-cyber-cyan text-cyber-cyan font-black text-xs tracking-widest hover:text-dark-100 transition-all duration-300 group text-center"
+          >
+            <span className="relative z-10">RESUME</span>
             <div className="absolute inset-0 bg-cyber-cyan translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-          </button>
+          </a>
 
           {/* Mobile Menu Toggle Button */}
           <div className='lg:hidden flex items-center z-[110]'>
@@ -97,11 +105,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Improved Mobile Menu Overlay */}
-     <div
-        className={`fixed left-0 right-0 top-[68px] bg-[#0f172a]/98 backdrop-blur-2xl border-b border-slate-800 transition-all duration-300 lg:hidden z-[105] overflow-hidden ${
-          showMenu ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
-        }`}
+
+      <div
+        className={`fixed left-0 right-0 top-[68px] bg-[#0f172a]/98 backdrop-blur-2xl border-b border-slate-800 transition-all duration-300 lg:hidden z-[105] overflow-hidden ${showMenu ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          }`}
       >
         <div className='flex flex-col items-center py-8 space-y-5'>
           {navLinks.map((link) => (
@@ -111,16 +118,20 @@ const Navbar = () => {
               onClick={() => setShowMenu(false)}
               className='group relative inline-block text-sm font-bold uppercase tracking-[0.2em] text-white/80 transition-colors hover:text-cyber-cyan'
             >
-
               <span>{link.name}</span>
-              {/* Refined Underline for Mobile */}
               <span className='absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-electric-purple to-cyber-cyan transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#00F0FF]'></span>
             </a>
           ))}
 
-          <button className="w-full max-w-xs mt-6 px-10 py-4 bg-gradient-to-r from-electric-purple to-cyber-cyan text-white font-black rounded-sm shadow-[0_0_20px_rgba(139,92,246,0.4)] active:scale-95 transition-all duration-300 uppercase tracking-widest">
+
+          <a
+            href={resumeLink}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full max-w-xs mt-6 px-10 py-4 bg-gradient-to-r from-electric-purple to-cyber-cyan text-white font-black rounded-sm shadow-[0_0_20px_rgba(139,92,246,0.4)] active:scale-95 transition-all duration-300 uppercase tracking-widest text-center"
+          >
             RESUME
-          </button>
+          </a>
         </div>
       </div>
     </nav>
@@ -128,7 +139,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 
 
 
