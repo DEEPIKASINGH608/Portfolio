@@ -41,9 +41,7 @@ GirlScript Summer of Code (GSSoC) 2026: Selected Contributor working on communit
 
 Learning Unlimited: Successfully contributed UI components to the ESP-Website project.
 
-Mandal Cricket Association: Registered member and active team player, bringing the spirit of collaboration from the field to the terminal.
 
-📊 GitHub Stats
 📫 Let's Connect!
 Email: ds0648775@gmail.com
 
