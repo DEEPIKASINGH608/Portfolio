@@ -14,7 +14,7 @@ const About = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-                    {/* Left Column: Your Story & Philosophy */}
+
                     <div className="md:col-span-7 space-y-6">
                         <h3 className="text-2xl font-semibold text-white flex items-center gap-2">
                             <FaLightbulb className="text-indigo-500" /> My Journey
@@ -39,7 +39,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Experience Highlights */}
+                    {/*Experience Highlights */}
                     <div className="md:col-span-5 space-y-4">
                         <div className="p-6 bg-slate-900/50 border border-slate-800 rounded-3xl space-y-6">
                             <h3 className="text-xl font-bold text-white border-b border-slate-800 pb-4">

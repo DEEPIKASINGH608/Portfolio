@@ -48,7 +48,7 @@ const Contact = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    {/* Left: Professional Channels */}
+                    {/* Professional Channels */}
                     <div className="lg:col-span-5 space-y-8">
                         <div>
                             <h3 className="text-2xl font-semibold text-white mb-4">Let's talk!</h3>
